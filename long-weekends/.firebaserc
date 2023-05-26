@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "long-weekends-f8502"
+  },
+  "targets": {
+    "long-weekends-f8502": {
+      "hosting": {
+        "prod": [
+          "long-weekends-f8502"
+        ],
+        "dev": [
+          "longweekdev"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
