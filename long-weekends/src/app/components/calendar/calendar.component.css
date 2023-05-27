@@ -1,0 +1,26 @@
+/* Cambia el color de fondo del calendario */
+
+.fc {
+    background-color: #f7f7f7;
+}
+
+
+/* Cambia el color de fondo de los eventos */
+
+.fc-event {
+    background-color: #ff9f00;
+}
+
+
+/* Cambia el color de fondo de los días seleccionados */
+
+.fc-day.selected {
+    background-color: #ff9f0070;
+}
+
+
+/* Cambia el color del texto del título del evento */
+
+.fc-event-title {
+    color: white;
+}

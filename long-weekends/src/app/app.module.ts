@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LongWeekendsComponent } from './components/long-weekends/long-weekends.component';
 import { HolidaysComponent } from './components/holidays/holidays.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     HomeComponent,
     LongWeekendsComponent,
-    HolidaysComponent
+    HolidaysComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
