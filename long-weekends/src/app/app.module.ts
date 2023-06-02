@@ -5,27 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
-import { LongWeekendsComponent } from './components/long-weekends/long-weekends.component';
-import { HolidaysComponent } from './components/holidays/holidays.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FullCalendarModule } from '@fullcalendar/angular';
-import { CalendarComponent } from './components/calendar/calendar.component';
+
+import { HolidaysCalendarModule } from './modules/holidays-calendar/holidays-calendar.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent,
-    LongWeekendsComponent,
-    HolidaysComponent,
-    CalendarComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FullCalendarModule
+    HolidaysCalendarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

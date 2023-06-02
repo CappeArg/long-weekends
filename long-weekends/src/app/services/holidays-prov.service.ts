@@ -18,7 +18,7 @@ export class HolidaysProvService {
   }
 
   getCountryInfo(countryCode:string){
-    const endpoint = `${this.baseURL}/CountryInfo/${countryCode}`;
+    const endpoint = `${this.baseURL}CountryInfo/${countryCode}`;
     return this.http.get(endpoint);
   }
 
@@ -29,12 +29,12 @@ getLongWeekend(year:number,countryCode:string){
 }
 
 //Public Holiday
-getPublicHoliday(year:number,countryCode:string){
+getPublicHolidays(year:number,countryCode:string){
   const endpoint = `${this.baseURL}PublicHolidays/${year}/${countryCode}`;
   return this.http.get(endpoint)
 }
 
-getNextPublicHoliday(year:number,countryCode:string){
+getNextPublicHolidays(countryCode:string){
   const endpoint = `${this.baseURL}NextPublicHolidays/${countryCode}`;
   return this.http.get(endpoint)
 

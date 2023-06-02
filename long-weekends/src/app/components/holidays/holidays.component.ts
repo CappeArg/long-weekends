@@ -9,24 +9,34 @@ import { HolidaysProvService } from '../../services/holidays-prov.service';
 })
 export class HolidaysComponent implements OnInit {
 
+  holidays:any={};
+
  
 
-  constructor(private ApiHolidays: HolidaysProvService) { }
+  constructor( private holidayService:HolidaysProvService) { }
 
   ngOnInit() {
-    this.getcountries()
+
+    this.getPublicHolidays(2023,"AR")
+    this.getNextPublicHolidays("AR")
   }
 
-  getcountries(){
-
-    this.ApiHolidays.getCountries().subscribe(data=>{
-      console.log(data)
-    },
-    err=>{
-      console.log(err)
+  getPublicHolidays(year:number,countryCode:string){
+    this.holidayService.getPublicHolidays(year,countryCode).subscribe(holidays=>{
+      this.holidays = holidays
+      console.log(this.holidays)
     })
 
+  }
+
+  getNextPublicHolidays(countryCode:string){
+    this.holidayService.getNextPublicHolidays(countryCode).subscribe(nextHolidays=>{
+      this.holidays = nextHolidays;
+      console.log(this.holidays)
+    })
 
   }
+
+
 
 }

@@ -19,9 +19,12 @@ export class CalendarComponent implements OnInit {
     eventColor: 'orange'
   };
   
-  constructor() { }
+  constructor( ) { }
 
-  ngOnInit(): void {
+
+
+  ngOnInit() {
+
   }
 
 }
