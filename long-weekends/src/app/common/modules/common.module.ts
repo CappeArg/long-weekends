@@ -17,7 +17,7 @@ import { H1Component } from '../atoms/h1/h1.component';
     ImageComponent,
     InputComponent,
     LabelComponent,
-    H1Component
+    
   ]
 })
 export class CommonModule { }

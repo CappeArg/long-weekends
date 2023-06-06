@@ -7,7 +7,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { HolidaysCalendarModule } from './modules/holidays-calendar/holidays-calendar.module';
-import { CommonModule } from './common/modules/common.module';
+
+import { H1Component } from './common/atoms/h1/h1.component';
+import { ParagraphComponent } from './common/atoms/paragraph/paragraph.component';
 
 
 @NgModule({
@@ -15,13 +17,14 @@ import { CommonModule } from './common/modules/common.module';
     AppComponent,
     NavbarComponent,
     HomeComponent,
+    H1Component,
+    ParagraphComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HolidaysCalendarModule,
-    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
