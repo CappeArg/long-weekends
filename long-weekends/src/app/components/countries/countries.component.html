@@ -1,1 +1,8 @@
-<p>countries works!</p>
+<select [(ngModel)]="select">
+    <option value="">Choose a Country</option>
+    <option *ngFor="let country of countries" [value]="country.countryCode">{{ country.name }}</option>
+  </select>
+<button class="btn btn-primary m-2" (click)="getCountryInfo(select)">Search</button>
+
+
+<div>{{countryInfo | json}} | </div>

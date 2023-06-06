@@ -1,22 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { HolidaysProvService } from '../../services/holidays-prov.service';
+import { CalendarComponent } from '../calendar/calendar.component';
 
 @Component({
   selector: 'app-long-weekends',
   templateUrl: './long-weekends.component.html',
   styleUrls: ['./long-weekends.component.css']
 })
-export class LongWeekendsComponent implements OnInit {
+export class LongWeekendsComponent extends CalendarComponent {
 
   longweekend:any = {}
 
-  constructor( private holidayService:HolidaysProvService ) { }
 
-  ngOnInit() {
-
+  ngAfterViewInit(): void {
     this.getLongWeekends(2023,"AR")
-
-
   }
 
   getLongWeekends(year:number, countryCode:string){

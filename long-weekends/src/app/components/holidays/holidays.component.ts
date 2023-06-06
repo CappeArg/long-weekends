@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HolidaysProvService } from '../../services/holidays-prov.service';
+import { CalendarComponent } from '../calendar/calendar.component';
 
 
 @Component({
@@ -7,18 +7,14 @@ import { HolidaysProvService } from '../../services/holidays-prov.service';
   templateUrl: './holidays.component.html',
   styleUrls: ['./holidays.component.css']
 })
-export class HolidaysComponent implements OnInit {
+export class HolidaysComponent extends CalendarComponent {
 
   holidays:any={};
 
- 
-
-  constructor( private holidayService:HolidaysProvService) { }
-
-  ngOnInit() {
-
+  ngAfterViewInit(): void {
     this.getPublicHolidays(2023,"AR")
     this.getNextPublicHolidays("AR")
+    
   }
 
   getPublicHolidays(year:number,countryCode:string){

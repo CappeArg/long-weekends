@@ -7,6 +7,7 @@ import { LongWeekendsComponent } from 'src/app/components/long-weekends/long-wee
 import { HolidaysComponent } from 'src/app/components/holidays/holidays.component';
 import { CalendarComponent } from 'src/app/components/calendar/calendar.component';
 import { CountriesComponent } from 'src/app/components/countries/countries.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +21,7 @@ import { CountriesComponent } from 'src/app/components/countries/countries.compo
     CommonModule,
     FullCalendarModule,
     HttpClientModule,
+    FormsModule
   ]
 })
 export class HolidaysCalendarModule { }

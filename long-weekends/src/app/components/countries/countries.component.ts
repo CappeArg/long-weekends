@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { HolidaysProvService } from 'src/app/services/holidays-prov.service';
+import { CalendarComponent } from '../calendar/calendar.component';
 
 @Component({
   selector: 'app-countries',
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.css']
 })
-export class CountriesComponent implements OnInit {
-
-  constructor( private holidayService: HolidaysProvService ) { }
+export class CountriesComponent extends CalendarComponent {
   
   countries:any[] =[]
   countryInfo:any = {}
+  select: string="";
 
-  ngOnInit() {
-
-    this.getCountries()
-    this.getCountryInfo("AR")
- 
-  }
+  ngAfterViewInit(): void {
+    this.getCountries() 
+    
+ }
 
   getCountries(){
     this.holidayService.getCountries().subscribe(countries=>{

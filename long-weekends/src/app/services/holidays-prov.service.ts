@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class HolidaysProvService {
 
+  //Armar un metodo que me traiga la URL exect_get, guardar la URL en enviroment.-
+
   baseURL= "https://date.nager.at/api/v3/";
 
   constructor(private http: HttpClient) { }
