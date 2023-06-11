@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HolidaysProvService } from '../../services/holidays-prov.service';
 import { CalendarComponent } from '../calendar/calendar.component';
 
 @Component({
@@ -17,7 +16,7 @@ export class LongWeekendsComponent extends CalendarComponent {
   }
 
   getLongWeekends(year:number, countryCode:string){
-    this.holidayService.getLongWeekend(year,countryCode).subscribe(weekends=>{
+    this.longweekendProvider.getLongWeekend(year,countryCode).subscribe(weekends=>{
       this.longweekend = weekends
       console.log(this.longweekend)
     })

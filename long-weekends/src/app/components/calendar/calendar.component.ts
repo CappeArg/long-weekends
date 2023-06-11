@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';
 import bootstrap5Plugin from '@fullcalendar/bootstrap5';
-import { HolidaysProvService } from 'src/app/services/holidays-prov.service';
+import { CountriesService } from 'src/app/services/countries.service';
+import { PublicHolidayService } from '../../services/public-holiday.service';
+import { LongWeekendsService } from 'src/app/services/long-weekends.service';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { HolidaysProvService } from 'src/app/services/holidays-prov.service';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent {
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
@@ -29,12 +31,10 @@ export class CalendarComponent implements OnInit {
     eventColor: 'orange'
   };
   
-  constructor( protected holidayService: HolidaysProvService  ) { }
+  constructor( protected countriesPovider: CountriesService,
+               protected holidaysProvider: PublicHolidayService,
+               protected longweekendProvider: LongWeekendsService) { }
 
 
-
-  ngOnInit() {
-
-  }
 
 }

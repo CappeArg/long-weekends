@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HolidaysProvService } from './holidays-prov.service';
+import { exececuteService } from './execRequest';
 
-describe('HolidaysProvService', () => {
-  let service: HolidaysProvService;
+describe('exececuteService', () => {
+  let service: exececuteService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(HolidaysProvService);
+    service = TestBed.inject(exececuteService);
   });
 
   it('should be created', () => {

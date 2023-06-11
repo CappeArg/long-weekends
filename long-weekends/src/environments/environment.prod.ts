@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  baseURL: "https://date.nager.at/api/v3/",
+  production: true,
+
 };

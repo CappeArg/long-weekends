@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CalendarComponent } from '../calendar/calendar.component';
 
 
@@ -18,7 +18,7 @@ export class HolidaysComponent extends CalendarComponent {
   }
 
   getPublicHolidays(year:number,countryCode:string){
-    this.holidayService.getPublicHolidays(year,countryCode).subscribe(holidays=>{
+    this.holidaysProvider.getPublicHolidays(year,countryCode).subscribe(holidays=>{
       this.holidays = holidays
       console.log(this.holidays)
     })
@@ -26,7 +26,7 @@ export class HolidaysComponent extends CalendarComponent {
   }
 
   getNextPublicHolidays(countryCode:string){
-    this.holidayService.getNextPublicHolidays(countryCode).subscribe(nextHolidays=>{
+    this.holidaysProvider.getNextPublicHolidays(countryCode).subscribe(nextHolidays=>{
       this.holidays = nextHolidays;
       console.log(this.holidays)
     })
