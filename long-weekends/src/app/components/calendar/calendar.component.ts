@@ -17,7 +17,7 @@ export class CalendarComponent implements OnInit {
     initialView: 'dayGridMonth',
     plugins: [dayGridPlugin, listPlugin, bootstrap5Plugin],
     headerToolbar: {
-      left: 'prev,next today',
+      left: '',
       center: 'title',
       right: 'dayGridMonth,listMonth'
     },

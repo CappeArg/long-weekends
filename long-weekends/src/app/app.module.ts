@@ -10,6 +10,9 @@ import { HolidaysCalendarModule } from './modules/holidays-calendar/holidays-cal
 
 import { H1Component } from './common/atoms/h1/h1.component';
 import { ParagraphComponent } from './common/atoms/paragraph/paragraph.component';
+import { LinkComponent } from './common/atoms/link/link.component';
+import { ImageComponent } from './common/atoms/image/image.component';
+
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { ParagraphComponent } from './common/atoms/paragraph/paragraph.component
     NavbarComponent,
     HomeComponent,
     H1Component,
-    ParagraphComponent
+    ParagraphComponent,
+    LinkComponent,
+    ImageComponent
+    
     
   ],
   imports: [
