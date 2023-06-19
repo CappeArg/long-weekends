@@ -10,25 +10,41 @@ export class CountriesComponent extends CalendarComponent {
   
   countries:any[] =[]
   countryInfo:any = {}
-  select: string="";
+  selectValue: string = '';
+  selectedValue: string = '';
+  choose: string = "choose a country"
+  value:string = 'countryCode'
+  name:string = 'name'
 
+  //cargo primero la vista para evitar errores
   ngAfterViewInit(): void {
     this.getCountries() 
     
  }
 
+   onSelectedValueChange(value: string) {
+  this.selectedValue = value;
+  // Utiliza el valor seleccionado en el componente receptor
+}
+
+  handleButtonClick() {
+  this.getCountryInfo()
+  
+}
+
   getCountries(){
     this.countriesPovider.getCountries().subscribe(countries=>{
       this.countries = countries
-      console.log(this.countries)
     })
   }
 
-  getCountryInfo(codeCountry:string){
-    this.countriesPovider.getCountryInfo(codeCountry).subscribe(info=>{
-      this.countryInfo = info
-         console.log(this.countryInfo)
-    })
+  getCountryInfo() {
+    this.countriesPovider.getCountryInfo(this.selectedValue).subscribe(info => {
+      this.countryInfo = info;
+    });
+    
   }
 
+
+  
 }

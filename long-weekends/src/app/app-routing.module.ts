@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-
-import { LongWeekendsComponent } from './components/long-weekends/long-weekends.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CalendarpageComponent } from './pages/calendarpage/calendarpage.component';
 
 const routes: Routes = [
   {path:'home', component: HomeComponent},
-  {path:'holidays', component: CalendarComponent},
-  {path: 'long-weekends', component: LongWeekendsComponent},
+  {path:'holidays', component: CalendarpageComponent},
+  {path: 'long-weekends', component: CalendarpageComponent},
   {path:'**', redirectTo:'home', pathMatch:'full'}
 ];
 

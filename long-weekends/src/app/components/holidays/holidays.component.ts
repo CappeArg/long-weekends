@@ -20,7 +20,6 @@ export class HolidaysComponent extends CalendarComponent {
   getPublicHolidays(year:number,countryCode:string){
     this.holidaysProvider.getPublicHolidays(year,countryCode).subscribe(holidays=>{
       this.holidays = holidays
-      console.log(this.holidays)
     })
 
   }
@@ -28,7 +27,6 @@ export class HolidaysComponent extends CalendarComponent {
   getNextPublicHolidays(countryCode:string){
     this.holidaysProvider.getNextPublicHolidays(countryCode).subscribe(nextHolidays=>{
       this.holidays = nextHolidays;
-      console.log(this.holidays)
     })
 
   }

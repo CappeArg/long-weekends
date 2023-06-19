@@ -1,8 +1,7 @@
-<select [(ngModel)]="select">
-    <option value="">Choose a Country</option>
-    <option *ngFor="let country of countries" [value]="country.countryCode">{{ country.name }}</option>
-  </select>
-<button class="btn btn-primary m-2" (click)="getCountryInfo(select)">Search</button>
+<div class="d-flex align-items-center justify-content-center">
+    <pc-select [items]="countries" [firstOption]="choose" [valueProperty]="value" [nameProperty]="name" (selectedEmitter)="onSelectedValueChange($event)"></pc-select>
+    <pc-button (buttonClick)="handleButtonClick()"></pc-button>
 
-
-<div>{{countryInfo | json}} | </div>
+    <!-- provisorio -->
+    <div>{{countryInfo | json}} | </div>
+</div>

@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
-import { exececuteService } from './execRequest';
+import { restService } from './restService';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PublicHolidayService {
+export class PublicHolidayService extends restService {
 
-constructor(private service : exececuteService) { }
 
 getPublicHolidays(year: number, countryCode: string) {
   const endpoint = `PublicHolidays/${year}/${countryCode}`;
-  return this.service.get(endpoint);
+  return this.get(endpoint);
 }
 
 getNextPublicHolidays(countryCode: string) {
   const endpoint = `NextPublicHolidays/${countryCode}`;
-  return this.service.get(endpoint);
+  return this.get(endpoint);
 }
 
 }

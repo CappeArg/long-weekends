@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
-import { exececuteService } from './execRequest';
 import { Observable } from 'rxjs';
+import { restService } from './restService';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CountriesService {
-
-constructor(private service:exececuteService) { }
+export class CountriesService extends restService {
 
 getCountries(): Observable<any> {
   const endpoint = "AvailableCountries";
-  return this.service.get(endpoint);
+  return this.get(endpoint);
 }
 
 getCountryInfo(countryCode: string) {
   const endpoint = `CountryInfo/${countryCode}`;
-  return this.service.get(endpoint);
+  return this.get(endpoint);
 }
 
 }

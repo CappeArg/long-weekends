@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { exececuteService } from './execRequest';
+import { exececuteService } from './restService';
 
 describe('exececuteService', () => {
   let service: exececuteService;

@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { exececuteService } from './execRequest';
+import { restService } from './restService';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LongWeekendsService {
+export class LongWeekendsService extends restService {
 
-constructor( private service: exececuteService) { }
 
 getLongWeekend(year: number, countryCode: string) {
   const endpoint = `LongWeekend/${year}/${countryCode}`;
-  return this.service.get(endpoint);
+  return this.get(endpoint);
 }
 }

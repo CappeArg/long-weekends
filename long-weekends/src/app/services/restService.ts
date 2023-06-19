@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class exececuteService {
+export class restService {
 
   //Armar un metodo que me traiga la URL exect_get, guardar la URL en enviroment.-
     private baseURL = environment.baseURL;
