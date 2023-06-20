@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { CalendarComponent } from '../calendar/calendar.component';
 
 @Component({
@@ -13,7 +13,7 @@ export class CountriesComponent extends CalendarComponent {
   selectValue: string = '';
   selectedValue: string = '';
   choose: string = "choose a country"
-  value:string = 'countryCode'
+  @Output() value:string = 'countryCode'
   name:string = 'name'
 
   //cargo primero la vista para evitar errores
@@ -24,6 +24,7 @@ export class CountriesComponent extends CalendarComponent {
 
    onSelectedValueChange(value: string) {
   this.selectedValue = value;
+  this.value = value;
   // Utiliza el valor seleccionado en el componente receptor
 }
 
