@@ -1,7 +1,4 @@
 <div class="d-flex align-items-center justify-content-center">
     <pc-select [items]="countries" [firstOption]="choose" [valueProperty]="value" [nameProperty]="name" (selectedEmitter)="onSelectedValueChange($event)"></pc-select>
     <pc-button (buttonClick)="handleButtonClick()"></pc-button>
-
-    <!-- provisorio -->
-    <div>{{countryInfo | json}} | </div>
 </div>

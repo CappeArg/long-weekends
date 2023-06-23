@@ -21,5 +21,6 @@ export const calendarOptions: CalendarOptions = {
           { title: 'event 1', date: '2023-06-26' },
           { title: 'event 2', date: '2023-06-27' }
         ],
-        eventColor: '#1b5ccc'
+        eventColor: '#1b5ccc',
+        eventBackgroundColor: 'light-blue'
       };

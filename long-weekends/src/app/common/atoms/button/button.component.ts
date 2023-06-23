@@ -9,6 +9,7 @@ export class ButtonComponent implements OnInit {
 
   @Input() class: string              = "btn btn-primary m-2"
   @Input() text: string               = "Search"
+  
   @Output() buttonClick: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }
