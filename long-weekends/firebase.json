@@ -1,0 +1,24 @@
+{
+    "hosting": [{
+            "target": "prod",
+            "public": "dist/long-weekends",
+            "rewrites": [{
+                "source": "**",
+                "destination": "/index.html"
+            }]
+        },
+        {
+            "target": "dev",
+            "public": "dist/long-weekends",
+            "rewrites": [{
+                "source": "**",
+                "destination": "/index.html"
+            }]
+        }
+    ],
+    "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+    ]
+}
