@@ -1,0 +1,4 @@
+<select (change)="onSelectionChange($event.target['value'])">
+    <option [value]="firstOption">{{ firstOption }}</option>
+  <option *ngFor="let item of items" [value]="item[valueProperty]">{{ item[nameProperty] }}</option>
+</select>

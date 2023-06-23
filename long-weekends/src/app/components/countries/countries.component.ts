@@ -1,37 +1,65 @@
-import { Component, OnInit } from '@angular/core';
-import { HolidaysProvService } from 'src/app/services/holidays-prov.service';
+import { Component } from '@angular/core';
+import { CalendarComponent } from '../calendar/calendar.component';
 
 @Component({
   selector: 'app-countries',
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.css']
 })
-export class CountriesComponent implements OnInit {
-
-  constructor( private holidayService: HolidaysProvService ) { }
+export class CountriesComponent extends CalendarComponent {
   
   countries:any[] =[]
   countryInfo:any = {}
+  selectedValue: string = '';
+  choose: string = "choose a country"
+  value:string = 'countryCode'
+  name:string = 'name'
 
-  ngOnInit() {
+  //cargo primero la vista para evitar errores
+  ngAfterViewInit(): void {
+    this.getCountries() 
+    
+ }
 
-    this.getCountries()
-    this.getCountryInfo("AR")
- 
+   onSelectedValueChange(value: string) {
+    this.selectedValue = value;
+  // Utiliza el valor seleccionado en el componente receptor
+}
+
+ handleButtonClick() {
+
+  if(this.ifLongweekends(this.route)){
+    this.getLongWeekends(this.actualYear, this.selectedValue);
+
+
   }
+  else{
+ this.getPublicHolidays(this.actualYear, this.selectedValue );
+
+  }
+ this.getCountryInfo()
+    
+}
 
   getCountries(){
-    this.holidayService.getCountries().subscribe(countries=>{
+    this.countriesPovider.getCountries().subscribe(countries=>{
       this.countries = countries
-      console.log(this.countries)
     })
   }
 
-  getCountryInfo(codeCountry:string){
-    this.holidayService.getCountryInfo(codeCountry).subscribe(info=>{
-      this.countryInfo = info
-         console.log(this.countryInfo)
-    })
+  getCountryInfo() {
+    this.countriesPovider.getCountryInfo(this.selectedValue).subscribe(info => {
+      this.countryInfo = info;
+    });
+    
   }
+
+
+
 
 }
+
+
+
+  
+
